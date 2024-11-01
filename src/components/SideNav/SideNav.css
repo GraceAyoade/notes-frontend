@@ -1,0 +1,142 @@
+.side-nav {
+  width: 20%;
+  height: 100%;
+  /* border: 2px solid blueviolet; */
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: #171c26;
+}
+
+.profile {
+  height: 10%;
+  /* border: 2px solid black; */
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  font-size: medium;
+  font-weight: 200;
+  color: white;
+}
+
+.profile-image {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.nav-body {
+  height: 90%;
+  /* border: 2px solid rgb(28, 132, 42); */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.input-area {
+  width: 100%;
+  height: 10%;
+  /* border: 2px solid goldenrod; */
+  display: flex;
+  flex-direction: column;
+  gap: 4px 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.input {
+  width: 90%;
+  height: 50%;
+  position: relative;
+}
+
+.search-input {
+  padding: 8px;
+  width: 100%;
+  border-radius: 6px;
+  padding-left: 28px;
+}
+
+.play-icon-wrapper {
+  border: 1px solid #fff;
+  border-radius: 100%;
+  padding: 2px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-button {
+  width: 90%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  gap: 8px;
+  background-color: #3269ff;
+  color: #fff;
+  margin-top: 8px;
+}
+
+.nav-links {
+  width: 100%;
+  height: 30%;
+  /* border: 2px solid violet; */
+  padding: 16px 0;
+}
+
+.link-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 4px 20px;
+  list-style: none;
+}
+
+.link-lists :hover,
+.icon-style:hover {
+  cursor: pointer;
+}
+
+.icon-style {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.outlined-icon {
+  color: #5a6fa6;
+}
+
+.actions {
+  width: 100%;
+  height: 60%;
+  /* border: 2px solid cyan; */
+}
+
+.group-action {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px 20px;
+}
+
+.group {
+  height: 20px;
+  /* border: 1px solid pink; */
+}
+
+.footnote {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 16px 0;
+}

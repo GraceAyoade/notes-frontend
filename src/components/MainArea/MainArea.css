@@ -1,0 +1,132 @@
+.main-area {
+  width: 80%;
+  /* border: 2px solid rgb(255, 153, 0); */
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.main-header {
+  height: 15%;
+  /* border: 2px solid chartreuse; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 20px;
+}
+
+.main-body {
+  height: 85%;
+  padding: 2px;
+  /* border: 2px solid grey; */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mainbody-header {
+  /* border: 2px solid yellow; */
+  display: flex;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainbody-header1 {
+  width: 15%;
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 2px;
+}
+
+.mainbody-header2 {
+  width: 60px;
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  /* padding: 2px; */
+}
+
+.icon-method {
+  height: 40px;
+  width: 20px;
+}
+
+.notes-box {
+  height: 90%;
+  padding: 2px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.notes-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+  width: 24%;
+  padding: 16px;
+  background-color: #171c26;
+  border-radius: 8px;
+}
+.notes-reaction-icon:hover {
+  fill: rgb(49 104 253);
+  color: rgb(49 104 253);
+  cursor: pointer;
+}
+.notes-reaction-icon {
+  color: rgb(39 76 177);
+}
+
+.notes-title {
+  height: 15%;
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding-left: 20px; */
+}
+
+.notes {
+  height: 60%;
+  padding: 20px 0;
+}
+
+.notes-footer {
+  /* border: 1px solid orange; */
+  /* padding: 8px; */
+  display: flex;
+  gap: 2px;
+}
+
+.footer-pair-one {
+  width: 40%;
+  /* border: 1px solid pink; */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.db-icon {
+  margin-right: 8px;
+}
+
+.footer-pair-two {
+  width: 60%;
+  /* border: 1px solid burlywood; */
+  display: flex;
+  justify-content: end;
+}
+
+.footer-pair-two-smallbox {
+  width: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}

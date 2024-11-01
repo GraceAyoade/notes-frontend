@@ -1,0 +1,8 @@
+.container {
+  height: 100vh;
+  display: flex;
+  padding: 2px;
+  gap: 5px;
+  background-color: #0e121a;
+  color: #fff;
+}
