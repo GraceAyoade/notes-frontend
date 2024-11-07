@@ -1,0 +1,86 @@
+.modal-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(00, 00, 00, 0.92);
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-mainbox {
+  background-color: #171c26;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+}
+.footer > button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+.footer > button:nth-child(2) {
+  background-color: #3269ff;
+  color: #fff;
+}
+
+.title-input {
+  background-color: #0e121a;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.note-content {
+  color: white;
+  background-color: #0e121a;
+  height: 300px;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+.delmodal-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(00, 00, 00, 0.92);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.delmodal-mainbox{
+    background-color: #171c26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 160px;
+    flex-direction: column;
+    gap: 40px;
+    padding: 24px;
+    border-radius: 5px;
+}
+.delmodal-footer {
+    display: flex;
+    gap: 12px;
+}
+.delmodal-footer > button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+  .delmodal-footer > button:nth-child(2) {
+    background-color: #3269ff;
+    color: #fff;
+  }

@@ -16,6 +16,16 @@
   padding: 20px;
 }
 
+.add-noteicon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.add-noteicon:hover {
+fill: rgb(49 104 253);
+  color: rgb(49 104 253);
+  cursor: pointer;
+}
 .main-body {
   height: 85%;
   padding: 2px;
@@ -69,7 +79,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 350px;
+  height: 300px;
   width: 24%;
   padding: 16px;
   background-color: #171c26;
@@ -86,28 +96,25 @@
 
 .notes-title {
   height: 15%;
-  /* border: 2px solid green; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heart {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* padding-left: 20px; */
+  align-items: center;
 }
-
 .notes {
   height: 60%;
   padding: 20px 0;
 }
-
 .notes-footer {
-  /* border: 1px solid orange; */
-  /* padding: 8px; */
   display: flex;
   gap: 2px;
 }
-
 .footer-pair-one {
   width: 40%;
-  /* border: 1px solid pink; */
   display: flex;
   flex-direction: column;
   gap: 4px;

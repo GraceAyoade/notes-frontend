@@ -29,6 +29,16 @@ p.info {
 .items-between {
   align-items: space-between;
 }
+
+.items-end {
+  align-items: flex-end;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.gap-1 {
+  gap: 1rem;
+}
 .flex-column {
   flex-direction: column;
 }

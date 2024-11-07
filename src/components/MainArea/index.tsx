@@ -1,78 +1,150 @@
-import react from "react";
+import { FC, useState } from "react";
 import "./MainArea.css";
 import {
-  FiCodesandbox,
   FiDatabase,
+  FiEdit,
   FiFilter,
+  FiGrid,
   FiHeart,
-  FiNavigation2,
-  FiShare,
-  FiShare2,
-  FiShuffle,
+  FiPlusSquare,
+  FiTrash2,
 } from "react-icons/fi";
+import { formatDistance, formatRelative, subDays } from "date-fns";
+import Modal, { DeleteModal } from "../Modal/Modal";
 
-const MainArea = () => {
+const MainArea: FC<IMainArea> = ({ notes, refetch }) => {
+  const [modalDetails, setModalDetails] = useState({
+    visible: false,
+    note: null,
+  });
+  const [showDeleteModal, setShowDeleteModal] = useState({
+    visible: false,
+    noteId: null,
+  });
+
   return (
-    <section className="main-area">
-      <nav className="main-header">
-        <h2 className="lexend-font">Good Morning</h2>
-        <p className="poppins-extralight">Wednesday, 24th October, 2024</p>
-      </nav>
+    <>
+      <section className="main-area">
+        <nav className="main-header">
+          <h2 className="lexend-font">Good Morning</h2>
+          <p className="poppins-extralight">
+            {formatRelative(subDays(new Date(), 0), new Date())}
+          </p>
+        </nav>
 
-      <div className="main-body">
-        <div className="mainbody-header">
-          <div className="mainbody-header1">
-            <h3>
-              <b>Notes</b>
-            </h3>
-            <h3>Favourites</h3>
+        <div className="main-body">
+          <div className="mainbody-header">
+            <div className="mainbody-header1">
+              <h3>
+                <b>Notes</b>
+              </h3>
+              <h3>Favourites</h3>
+            </div>
+
+            <div className="mainbody-header2">
+              <FiGrid size={24} className="icon-method outlined-icon" />
+              <FiPlusSquare
+                onClick={() => setModalDetails({ visible: true, note: {title: "", content: ""} as any })}
+                size={44}
+                className="outlined-icon add-noteicon"
+              />
+              <FiFilter size={24} className="icon-method outlined-icon" />
+            </div>
           </div>
 
-          <div className="mainbody-header2">
-            <FiFilter className="icon-method outlined-icon" />
-            <FiShuffle className="icon-method outlined-icon" />
-          </div>
-        </div>
-
-        <div className="notes-box">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((note) => {
-            return (
-              <div className="notes-card">
-                <div>
-                  <div className="notes-title">
-                    <h3>New Notes</h3>
-                  </div>
-                  <div className="notes">
-                    <p>Notes are a way to document your thoughts</p>
-                  </div>
-                </div>
-                <div className="notes-footer">
-                  <div className="footer-pair-one">
-                    <p className="info date-created"> 2 days ago</p>
-                    <p className="info">
-                      <FiDatabase className="db-icon" />
-                      Categories
-                    </p>
-                  </div>
-
-                  <div className="footer-pair-two">
-                    <div className="footer-pair-two-smallbox">
-                      <div className="likes">
-                        <FiHeart size={24} className="notes-reaction-icon" />
+          <div className="notes-box">
+            {notes.map((note) => {
+              return (
+                <div key={note._id} className="notes-card">
+                  <div>
+                    <div className="notes-title">
+                      <div className="title-div">
+                        {" "}
+                        <h3>{note.title}</h3>
                       </div>
-                      <div className="share">
-                        <FiShare2 size={24} className="notes-reaction-icon" />
+                      <div className="heart">
+                        {" "}
+                        <FiHeart
+                          size={24}
+                          className="notes-reaction-icon icon-method fave-icon"
+                        />
+                      </div>
+                    </div>
+                    <div className="notes">
+                      <p>{note.content}</p>
+                    </div>
+                  </div>
+                  <div className="notes-footer">
+                    <div className="footer-pair-one">
+                      <p className="info date-created">
+                        {formatDistance(note.createdAt, new Date(), {
+                          addSuffix: true,
+                        })}
+                      </p>
+                      <p className="info">
+                        <FiDatabase className="db-icon" />
+                        {note.category}
+                      </p>
+                    </div>
+
+                    <div className="footer-pair-two">
+                      <div className="footer-pair-two-smallbox">
+                        <div className="likes">
+                          <FiTrash2
+                            onClick={() =>
+                              setShowDeleteModal({
+                                noteId: note._id,
+                                visible: true,
+                              })
+                            }
+                            size={24}
+                            className="notes-reaction-icon"
+                          />
+                        </div>
+                        <div className="edit">
+                          <FiEdit
+                            onClick={() =>
+                              setModalDetails({
+                                visible: true,
+                                note: note,
+                              })
+                            }
+                            size={24}
+                            className="notes-reaction-icon"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      {modalDetails.visible && (
+        <Modal
+          note={modalDetails.note}
+          closeModal={() => setModalDetails({ note: null, visible: false })}
+          refetch={refetch}
+        />
+      )}
+      {showDeleteModal.visible && (
+        <DeleteModal refetch={refetch}
+          noteId={showDeleteModal.noteId}
+          closeModal={() =>
+            setShowDeleteModal({ noteId: null, visible: false })
+          }
+        />
+      )}
+    </>
   );
 };
+
+interface IMainArea {
+  notes: any[];
+  error?: Error | null;
+  refetch:  () => void;
+}
 
 export default MainArea;
