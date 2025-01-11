@@ -100,7 +100,7 @@
   list-style: none;
 }
 
-.link-lists :hover,
+.link-lists:hover,
 .icon-style:hover {
   cursor: pointer;
 }

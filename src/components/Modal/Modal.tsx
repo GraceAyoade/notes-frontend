@@ -35,6 +35,7 @@ const Modal: FC<IModal> = ({ note, closeModal, refetch }) => {
     } catch (error) {}
     console.log("Note update", noteDetails);
   }
+  
   async function addNote() {
     try {
       const response = await axios.post(
